@@ -1,13 +1,74 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: Helvetica;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+button {
+  width: 80px;
+  height: 25px;
+  margin: 15px 15px 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
 }
+
+.login {
+  padding: 5px;
+}
+
+.login p {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.login-wrapper, .portfolio-wrapper, .page-wrapper, .portfolio-overview {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+}
+
+.login-wrapper {
+  border: 1px solid pink;
+  padding: 40px;
+}
+
+.heading, .button, .back-link {
+  display: flex;
+  justify-content: center;
+  text-decoration: underline;
+  text-decoration-color: pink;
+}
+
+.number-header {
+  text-decoration: underline;
+  text-decoration-color: pink;
+}
+
+.back-link {
+  padding: 8px;
+  font-size: 14px;
+}
+
+.portfolio-name {
+  font-size: 20px;
+}
+.portfolio-values {
+  padding-bottom: 20px;
+  font-size: 15px;
+}
+
+.number-wrapper {
+  border: 1px solid pink;
+  padding: 20px;
+  margin: 10px;
+}
+
+.number-wrapper h2 {
+  margin-top: 2px;
+}
+
+

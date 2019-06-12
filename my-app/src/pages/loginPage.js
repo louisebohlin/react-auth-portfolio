@@ -74,8 +74,9 @@ class LoginPage extends Component {
         if (localStorage.getItem("token")) {
           console.log(portfolios)
           return (
-            <div className="portfolio-wrapper">
-              <button onClick={this.handleLogout}>Log out</button>
+            <div className="container">
+              <div className="portfolio-wrapper">
+                <div className="button"><button onClick={this.handleLogout}>Log out</button></div>
                     <h1 className="heading">My portfolios</h1>
                     <div className="portfolios">
                       {portfolios && portfolios.map((listing, index) => (
@@ -90,41 +91,42 @@ class LoginPage extends Component {
                         </Link>
                       ))}
                     </div>
+                  </div>
             </div>
           )
         } else {
           return (
-            <div className="login-wrapper">
-              <h1 className="heading">Log in</h1>
-
-              <form className="login" onSubmit={this.handleLogin}>
-                <div className="input-container">
-                  <label className="input-label" htmlFor="email"><p>Email</p></label>
-                  <input
-                    className="input-field"
-                    name="email"
-                    placeholder="Email"
-                    type="email"
-                    value={email}
-                    onChange={this.handleChange}
-                    required />
+            <div className="container">
+              <div className="login-wrapper">
+                <h1 className="heading">Log in</h1>
+                <form className="login" onSubmit={this.handleLogin}>
+                 <div className="input-container">
+                    <label className="input-label" htmlFor="email"><p>Email:</p></label>
+                    <input
+                      className="input-field"
+                      name="email"
+                      placeholder="Email"
+                      type="email"
+                      value={email}
+                      onChange={this.handleChange}
+                      required />
+                  </div>
+                  <div className="input-container">
+                    <label className="input-label" htmlFor="password"><p>Password:</p></label>
+                    <input
+                      className="input-field"
+                      name="password"
+                      placeholder="Password"
+                      type="password"
+                      value={password}
+                      onChange={this.handleChange}
+                      required />
+                  </div>
+                  <div className="button"><button type="submit">Sign in</button></div>
+                </form>
                 </div>
-                <div className="input-container">
-                  <label className="input-label" htmlFor="password"><p>Password</p></label>
-                  <input
-                    className="input-field"
-                    name="password"
-                    placeholder="Password"
-                    type="password"
-                    value={password}
-                    onChange={this.handleChange}
-                    required />
-                </div>
-                <button type="submit">Sign in</button>
-              </form>
-
-            </div>
-          )
+              </div>
+            )
         }
       }
     }

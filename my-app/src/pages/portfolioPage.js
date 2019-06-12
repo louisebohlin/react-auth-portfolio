@@ -32,37 +32,34 @@ class PortfolioPage extends React.Component {
     const { positions } = this.state
 
     return (
-      <div className="page-wrapper">
-        <Link to="/">Back to overview</Link>
-
-            <div>
-              {positions && positions.map(position => {
-                const { currency, name, price_today, yield_1d } = position.instrument
-
-                return (
-                  <div className="container" key={position.id}>
-                    <h2>{name}</h2>
-                    <div className="numbers">
-                        <div className="number-header">
-                          Price today:
-                        </div>
-                        <div className="number-value">
-                          {`${price_today} ${currency}`}
+       <div className="container">
+        <div className="page-wrapper">
+            <div className="back-link"><Link to="/">Back to overview</Link></div>
+                <div>
+                {positions && positions.map(position => {
+                    const { currency, name, price_today, yield_1d } = position.instrument
+                    return (
+                        <div className="number-wrapper" key={position.id}>
+                            <h2>{name}</h2>
+                            <div className="numbers">
+                                <div className="number-header">
+                                Price today:
+                                </div>
+                                <div className="number-value">
+                                {`${price_today} ${currency}`}
+                                </div>
+                                <div className="number-header">
+                                Yield one day:
+                                </div>
+                                <div className="number-value">
+                                {`${yield_1d} ${currency}`}
+                                </div>
                       </div>
-
-                      <div className="number-header">
-                          Yield one day:
-                        </div>
-                        <div className="number-value">
-                          {`${yield_1d} ${currency}`}
-                        </div>
-                      </div>
-
                     </div>
-
                 )
               })}
             </div>
+         </div>
       </div>
     )
   }
