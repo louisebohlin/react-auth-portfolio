@@ -60,6 +60,13 @@ class LoginPage extends Component {
       })
     }
 
+    handleLogout = () => {
+      localStorage.removeItem("token")
+      this.setState({
+        portfolios: null
+      })
+    }
+
 
     render() {
         const { email, password, portfolios } = this.state
@@ -68,6 +75,7 @@ class LoginPage extends Component {
           console.log(portfolios)
           return (
             <div className="portfolio-wrapper">
+              <button onClick={this.handleLogout}>Log out</button>
                     <h1 className="heading">My portfolios</h1>
                     <div className="portfolios">
                       {portfolios && portfolios.map((listing, index) => (
