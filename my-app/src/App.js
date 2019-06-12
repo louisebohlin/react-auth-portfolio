@@ -1,14 +1,18 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import LoginPage from "./pages/loginPage";
+import PortfolioPage from "./pages/portfolioPage";
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          Edit src/App.js and save to reload.
-        </p>
-      </header>
+        <Router>
+          <Switch>
+            <Route path="/" exact component={LoginPage} />
+            <Route path="/portfolios/:id" component={PortfolioPage} />
+          </Switch>
+        </Router>
     </div>
   );
 }
